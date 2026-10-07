@@ -1,47 +1,34 @@
-Functional Requirement 5
+# Functional Requirement 5
 Feature: Suggest event
-Background:     
+  As a user
+  So that I be informed about new current volunteer events that I might be interested in participating
+  I want to be suggested new current volunteer events
+
+  Background:
     Given that I am logged in
-    And I am a user                                     
-Scenario Outline: Successful information with event matching and corresponding suggestions
-    Given I have inserted my <personal information> 
-    When I am viewing the homepage 
-    Then the notification system should be able to check my <personal information>    
-    And the notification should match user’s <personal information> with current <event options>                    
-    And the notification system must provide the user with some <event options> based on my <information>
-    When I click on an <event option> 
-    Then I should be redirected to the event page 
- 
- 
-Scenario Outline: No current volunteer event matching the user’s information due to its being blank
-    Given I have not inserted my <personal information>
-    When I am viewing the homepage                          
-    Then the notification system should be able to check that my <personal information> is blank
-    And the notification system must provide the user with random current volunteer <event options>
-    When I click on an <event option> 
+    And I am a user
+
+  Scenario Outline: Successful information with event matching and corresponding suggestions
+    Given I have submitted my personal information
+      | Personal information        | (example)                                                  | minimum value        | maximum value         |
+      | Name                        | “Ioannis Papadopoulos”                                     | minimum 3 characters | maximum 30 characters |
+      | Age                         | 30                                                         | minimum of 18        | maximum of 99         |
+      | Location                    | “Thessaloniki”                                             | minimum 3 characters | maximum 30 characters |
+      | Profession                  | “Teacher”                                                  | minimum 3 characters | maximum 30 characters |
+      | Interests                   | “Hiking”                                                   | minimum 3 characters | maximum 30 characters |
+      | History of volunteer events | “Hellenic Rescue Team Expedition in Olympus (summer 2016)” | minimum 3 characters | maximum 30 characters |
+    And I am viewing the homepage
+    Then the system should be able to check my personal information
+    And the system should match my personal information with current event options
+      | Event option | “Tree planting in Chortiatis mountain (spring 2019)” | “First aid workshop” |
+    And the system should provide me with some event options based on my information
+    When I click on an event option
     Then I should be redirected to the event page
-     
-Scenario: Unavailability of new current event options
-    Given I have inserted my <personal information>
-    When I am viewing the homepage                          
-    Then the notification system should be able to check my <personal information> 
-    But the matching is not successful
-    And I should see a message saying “No current events available”
-    
- 
-Examples: Personal information  
-| personal information | (example) | minimum value | maximum value |
-|name       | “Ioannis Papadopoulos” | minimum 3 characters | maximum 30 characters|
-| age       | 30  | minimum of 18 | maximum of 99 |
-| location | “Thessaloniki” | minimum 3 characters | maximum 30 characters |
-| profession | “Teacher” |  minimum 3 characters | maximum 30 characters |
-| interests | “Hiking” | minimum 3 characters | maximum 30 characters |
-| History of volunteer events | “Hellenic Rescue Team Expedition in Olympus (summer 2016)”| minimum 3 characters | maximum 30 characters |
- 
- 
-Examples: Event option
-|”Tree planting in Chortiatis mountain (spring 2019)”|
-| “First aid workshop” |
- 
 
-
+  Scenario: Unavailability of new current event options
+    Given I have inserted my personal information
+    And I am viewing the homepage
+    Then the system should be able to check my personal information
+    And my information should be matched to events
+    When the matching is not successful
+    Then I should view the message “No current events available”
