@@ -1828,7 +1828,7 @@
 											"top": 401.5,
 											"width": 149,
 											"height": 39,
-											"text": "View information of οrganisation or event or user",
+											"text": "View information of organisation or event or user",
 											"wordWrap": true
 										},
 										{
@@ -12905,7 +12905,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF4Ikqc2BzeViE="
 					},
-					"name": "View information of οrganisation or event or user",
+					"name": "View information of organisation or event or user",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -17244,7 +17244,7 @@
 															"top": 879,
 															"width": 135.3671875,
 															"height": 13,
-															"text": "Inform about suceess"
+															"text": "Inform about success"
 														},
 														{
 															"_type": "LabelView",
@@ -21924,7 +21924,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF4LPuLC7z2DIQ="
 									},
-									"name": "Inform about suceess"
+									"name": "Inform about success"
 								},
 								{
 									"_type": "UMLMergeNode",

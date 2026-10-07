@@ -108,7 +108,7 @@ This class represents the interface where the user signs up to the application.
 - `title4: Label`: the fourth heading on the SignUp page.
 - `buttonTerms: Button`: the button the user presses to read the web app's terms of use.
 - `buttonData: Button`: the button the user presses to read the web app's data policy.
-- `buttonCookiePolicy: Button`: the button the user presses to read the web app's cookie policy.
+- `buttonCookiesPolicy: Button`: the button the user presses to read the web app's cookie policy.
 
 **<ins>Class methods:</ins>**
 
@@ -119,7 +119,7 @@ This class represents the interface where the user signs up to the application.
 - `buttonExitClick(): void`: calls the `closeSubmitInfoWindow()` function of the controller `LogInSignInController` and returns the user to the LogInPageGUI.
 - `buttonTermsClick(): void`: creates the interface that shows the terms of use.
 - `buttonDataClick(): void`: creates the interface that shows the data policy.
-- `buttonCookiePolicyClick(): void`: creates the interface that shows the cookie policy.
+- `buttonCookiesPolicyClick(): void`: creates the interface that shows the cookie policy.
 
 #### Boundary SubmitOrganisationInformationPageGUI
 
@@ -156,7 +156,7 @@ This class represents the interface where the user fills in their details.
 - `placeOfLivingBox: Text Box`: the text box where the user enters their place of living.
 - `professionBox: Text Box`: the text box where the user enters their profession.
 - `interestsBox: Text Box`: the text box where the user enters their interests.
-- `pastEventBox: Text Box`: the text box where the user enters their past events.
+- `pastEventsBox: Text Box`: the text box where the user enters their past events.
 
 #### Controller LogInSignInController
 
@@ -214,7 +214,7 @@ This class represents the user and holds all the information that belongs to the
 - `setPlaceOfLiving(placeOfLiving: String): void`: sets the user's place of residence.
 - `setWork(work: String): void`: sets the user's work.
 - `setInterests(interests: String): void`: sets the user's interests.
-- `setPastsEvents(pastEvents: String): void`: sets the earlier events in which the user took part.
+- `setPastEvents(pastEvents: String): void`: sets the earlier events in which the user took part.
 - `getName(): String`: returns the user's name.
 - `getSurname(): String`: returns the user's surname.
 - `getAge(): Integer`: returns the user's age.
@@ -312,16 +312,16 @@ This class represents the organisation and holds all the information that belong
 - `getBankAccount(): Integer`: returns the organisation's bank account.
 - `getImage(): Image`: returns the organisation's image.
 
-#### Boundary OrganisationPorfileGUI
+#### Boundary OrganisationProfileGUI
 
-![UML class box: OrganisationPorfileGUI](../uml/diagrams/class-model/OrganisationPorfileGUI.png)
+![UML class box: OrganisationProfileGUI](../uml/diagrams/class-model/OrganisationProfileGUI.png)
 
 This class represents the profile interface, shown when the corresponding profile is visited.
 
 **<ins>Class attributes:</ins>**
 
 - `organisationName: Label`: the organisation's name.
-- `organisationPorfilePicture: Image`: the organisation's profile picture.
+- `organisationProfilePicture: Image`: the organisation's profile picture.
 - `information: Label`: the heading a visitor sees on the profile, in the box above the information.
 - `yearOfEstablishment: Label`: the year the organisation was established.
 - `fieldOfEmployment: Label`: the field in which the organisation operates.
@@ -367,7 +367,7 @@ This controller implements methods for managing the organisation's information, 
 
 - `openSubmitInformationPage(organisation: Organisation): SubmitOrganisationInformationPageGUI`: lets the organisation edit its information through the `SubmitOrganisationInformationPageGUI`.
 - `manageMember(user: User): void`: called when a user becomes a member or leaves.
-- `redirectToCreateEventPageGUI(): CreateEventPαgeGUI`: redirects to the Event creation page.
+- `redirectToCreateEventPageGUI(): CreateEventPageGUI`: redirects to the Event creation page.
 - `redirectToDonationPageGUI(): DonationPageGUI`: redirects to the page where a donation is made.
 
 **<ins>Class diagram:</ins>**
@@ -434,7 +434,7 @@ This class is required for the interface for creating an Event.
 - `buttonSpecialOutfitYes`: a button that selects that special clothing will be used.
 - `buttonSpecialOutfitNo`: a button that selects that no special clothing will be used.
 - `specialOutfitDescription`: a description of the special clothing to be used, if it is required.
-- `buttonAddImageClick`: a button with which a profile picture for the Event can be uploaded.
+- `buttonAddImage`: a button with which a profile picture for the Event can be uploaded.
 - `buttonSubmit`: a button used to submit the Event's details.
 
 **<ins>Class methods:</ins>**
@@ -530,9 +530,9 @@ This package contains the classes related to the system's interfaces.
 - `myEvents: Label`: the title of the `EventBoxGUI` objects that follow.
 - `suggestedEvents: Label`: the title of the `EventBoxGUI` objects that follow.
 
-#### Boundary SearchResultsGUI
+#### Boundary SearchResultsPageGUI
 
-![UML class box: SearchResultsGUI](../uml/diagrams/class-model/SearchResultsGUI.png)
+![UML class box: SearchResultsPageGUI](../uml/diagrams/class-model/SearchResultsPageGUI.png)
 
 **<ins>Class attributes:</ins>**
 
@@ -549,14 +549,14 @@ This package contains the classes related to the system's interfaces.
 - `buttonFilterOrganisationsClick(): void`: calls the function `searchOrganisation(keyword: String): Array<Organisation>` of the controller `HeaderController`.
 - `buttonFilterPeopleClick(): void`: calls the function `searchUser(keyword: String): Array<User>` of the controller `HeaderController`.
 
-#### Controller PagesController
+#### Controller PageController
 
-![UML class box: PagesController](../uml/diagrams/class-model/PagesController.png)
+![UML class box: PageController](../uml/diagrams/class-model/PageController.png)
 
 **<ins>Class methods:</ins>**
 
 - `suggestEvent(user: User): Event`: runs the algorithm that finds current volunteer events that could interest the user, based on their information.
-- `redirectToOrganisation(organisasionBox: OrganisationBoxGUI): void`: redirects the user to the organisation profile `OrganisationProfileGUI` that corresponds to the argument `organisationBox`.
+- `redirectToOrganisation(organisationBox: OrganisationBoxGUI): void`: redirects the user to the organisation profile `OrganisationProfileGUI` that corresponds to the argument `organisationBox`.
 - `redirectToUser(userBox: UserBoxGUI): void`: redirects the user to the user profile `UserProfileGUI` that corresponds to the argument `userBox`.
 - `redirectToEvent(eventBox: EventBoxGUI): void`: redirects the user to the volunteer event page `EventPageGUI` that corresponds to the argument `eventBox`.
 
@@ -570,9 +570,9 @@ This package contains the classes that make up the structure of the interface's 
 
 ![Header Package: the classes it contains](../uml/diagrams/class-model/header-package.png)
 
-#### Boundary HeaderGui
+#### Boundary HeaderGUI
 
-![UML class box: HeaderGui](../uml/diagrams/class-model/HeaderGui.png)
+![UML class box: HeaderGUI](../uml/diagrams/class-model/HeaderGui.png)
 
 This class expresses the interface of the header at the top of every screen.
 
@@ -608,15 +608,15 @@ This class expresses the interface of the menu that appears when the user presse
 
 **<ins>Class methods:</ins>**
 
-- `buttonViewProfile(): void`: calls the function `redirectToProfilePageGUI()` of the controller `HeaderController`.
-- `buttonSettingsAndPrivacyClick(): void`: calls the function `redirectToSettingsAndPrivacyPageGUI()` of the controller `HeaderController`.
+- `buttonViewProfileClick(): void`: calls the function `redirectToProfilePageGUI()` of the controller `HeaderController`.
+- `buttonSettingsAndPrivacyClick(): void`: calls the function `redirectToSettingsAndPrivacy()` of the controller `HeaderController`.
 - `buttonHelpAndSupportClick(): void`: calls the function `redirectToHelpAndSupportPageGUI()` of the controller `HeaderController`.
 - `buttonGiveFeedbackClick(): void`: calls the function `redirectToGiveFeedbackPageGUI()` of the controller `HeaderController`.
 - `buttonLogOutClick(): void`: calls the function `redirectToSIngInPageGUI()` of the controller `HeaderController` and signs the user out of the application.
 
-#### NotitficationDropListGUI
+#### NotificationDropListGUI
 
-![UML class box: NotitficationDropListGUI](../uml/diagrams/class-model/NotitficationDropListGUI.png)
+![UML class box: NotificationDropListGUI](../uml/diagrams/class-model/NotificationDropListGUI.png)
 
 This class expresses the interface of the card with the notifications that appears when the user presses the Notifications button in the header of the page they are on.
 
@@ -639,7 +639,7 @@ This controller holds the functions for the user's correct interaction with the 
 - `searchEvent(keyword: String): Array<Event>`: runs the search algorithm to match volunteer events to the phrase `keyword` and returns an array of `Event` objects.
 - `redirectToHomepageGUI(): HomePageGUI`: redirects the user to the home page `HomePageGUI`.
 - `redirectToProfilePageGUI(): ProfilePageGUI`: redirects the user to their profile page `ProfilePageGUI`.
-- `redirectToSettingsAndPrivacyPageGUI(): SettingsAndPrivacyPageGUI`: redirects the user to the settings and data protection page `SettingsAndPrivacyPageGUI`.
+- `redirectToSettingsAndPrivacy(): SettingsAndPrivacyPageGUI`: redirects the user to the settings and data protection page `SettingsAndPrivacyPageGUI`.
 - `redirectToHelpAndSupportPageGUI(): HelpAndSupportPageGUI`: redirects the user to the help and support page `HelpAndSupportPageGUI`.
 - `redirectToGiveFeedbackPageGUI(): GiveFeedbackPageGUI`: redirects the user to the page where they can give us feedback about the application's functions, `GiveFeedbackPageGUI`.
 
@@ -724,7 +724,7 @@ This package contains the classes that implement the donations that users make t
 - `securityCode: String`: the card's security code. It has three or four digits and is typically printed on the back of the card.
 - `postalCode: Integer`: the postal code the user has given to the bank that issued the card.
 - `paypalMailAddress: String`: the email address the user uses for transactions through the PayPal service.
-- `paypalPhoneAddress: Long`: the phone number the user uses for transactions through the PayPal service.
+- `paypalPhoneNumber: Long`: the phone number the user uses for transactions through the PayPal service.
 - `amazonPayMailAddress: String`: the email address the user uses for transactions through the Amazon Pay service.
 - `amazonPayPhoneNumber: Long`: the phone number the user uses for transactions through the Amazon Pay service.
 - `amazonPayPassword: String`: the user's password for transactions through the Amazon Pay service.
@@ -779,7 +779,7 @@ This package contains the classes that implement the donations that users make t
 - `enterAmount: Label`: a prompt asking the user to enter their full name.
 - `amountBox: Text Box`: the box for entering the user's donation amount.
 - `buttonAmountSelect: DonationAmount`: suggested amounts the user can donate.
-- `selectpaymentMethod: Label`: a prompt asking the user to choose a payment method.
+- `selectPaymentMethod: Label`: a prompt asking the user to choose a payment method.
 - `buttonCreditOrDebit: Dropdown Button`: the button for donating by card.
 - `buttonPayPal: Dropdown Button`: the button for donating through the PayPal service.
 - `buttonAmazonPay: Dropdown Button`: the button for donating through the Amazon Pay service.
@@ -794,9 +794,9 @@ This package contains the classes that implement the donations that users make t
 - `buttonAmazonPayClick(): AmazonPayDropdownMenu`: returns the drop-down menu related to donating through the Amazon Pay service.
 - `buttonBankDepositClick(): BankDepositDropdownMenu`: returns the drop-down menu related to donating by a deposit into an account.
 
-#### Enumeration Amount
+#### Enumeration DonationAmount
 
-![UML class box: Amount](../uml/diagrams/class-model/Amount.png)
+![UML class box: DonationAmount](../uml/diagrams/class-model/DonationAmount.png)
 
 Holds the suggested donation amounts for the organisation: €10, €50 and €100.
 
@@ -822,7 +822,7 @@ Holds the suggested donation amounts for the organisation: €10, €50 and €1
 
 - `creditOrDebitError(paymentStatus: Boolean): void`: activates `displayErrorMessage(): Label` of the class `FinancesController` in these cases: if this payment method is not available for the organisation, or if the user made an error entering the details. It is also activated when the transaction did not succeed.
 - `securityCodeQuestionMarkHover(): Label`: activated when the user hovers the mouse over the button `buttonSecurityCodeQuestionMark`, and returns an explanatory note on the term security code.
-- `zipOrPostalCodeQuestionMark(): Label`: activated when the user hovers the mouse over the button `buttonZipOrPostalCodeQuestionMark`, and returns an explanatory note on the term postal code (ZIP or Postal Code).
+- `zipOrPostalCodeQuestionMarkHover(): Label`: activated when the user hovers the mouse over the button `buttonZipOrPostalCodeQuestionMark`, and returns an explanatory note on the term postal code (ZIP or Postal Code).
 
 #### Boundary PayPalDropdownMenu
 
@@ -838,7 +838,7 @@ Holds the suggested donation amounts for the organisation: €10, €50 and €1
 
 **<ins>Class methods:</ins>**
 
-- `PayPalError(paymentStatus: Boolean): Label`: activates `displayErrorMessage(): Label` of the class `FinancesController` in these cases: if this payment method is not available for the organisation, or if the user made an error entering the details. It is also activated when the transaction did not succeed.
+- `payPalError(paymentStatus: Boolean): Label`: activates `displayErrorMessage(): Label` of the class `FinancesController` in these cases: if this payment method is not available for the organisation, or if the user made an error entering the details. It is also activated when the transaction did not succeed.
 
 #### Boundary AmazonPayDropdownMenu
 
@@ -877,8 +877,8 @@ Holds the suggested donation amounts for the organisation: €10, €50 and €1
 
 **<ins>Class attributes:</ins>**
 
-- `agreeToTermsAndPolicy: Label`: a short text of agreement with the application's terms of use (Terms) and policy (Policy).
-- `agreeToTermsAndPolicyBox: Check Box`: the check box the user ticks to declare their agreement with the application's terms of use and policy.
+- `agreeWithTermsAndPolicy: Label`: a short text of agreement with the application's terms of use (Terms) and policy (Policy).
+- `agreeWithTermsAndPolicyBox: Check Box`: the check box the user ticks to declare their agreement with the application's terms of use and policy.
 - `buttonLearnMore: Button`: the button the user presses to learn more about the application's terms of use (Terms) and policy (Policy).
 - `buttonCompleteDonation: Button`: the button that completes the donation.
 - `confirmationPopUp: PopUp Window`: a small window confirming the donation.
@@ -888,7 +888,7 @@ Holds the suggested donation amounts for the organisation: €10, €50 and €1
 
 **<ins>Class methods:</ins>**
 
-- `agreeToTermsAndPolicyBoxClick(): void`: activated when the corresponding check box is ticked. It is a precondition for completing the donation.
+- `agreeWithTermsAndPolicyBoxClick(): void`: activated when the corresponding check box is ticked. It is a precondition for completing the donation.
 - `buttonCompleteDonationClick(): PopUpWindow`: activated when the button `buttonCompleteDonation` is pressed, and makes the `confirmationPopUp` appear.
 - `buttonLearnMoreClick(): void`: activates the function `displayTermsAndConditions(): Label` of the class `FinancesController`.
 - `buttonYesClick(): void`: completes the donation on the user's side when the button `buttonYes` is pressed. It activates `infoFromUserToProxy(donation: Donation): Donation` of the class `FinancesController`.
@@ -926,7 +926,7 @@ Holds the suggested donation amounts for the organisation: €10, €50 and €1
 
 - `infoFromUserToProxy(donation: Donation): Donation`: takes the payment information, creates a `Donation` object and sends the object it created to the proxy indicated by the value of the variable `paymentMethod`. The method is activated by the corresponding method `buttonYesClick()` of the class `TermsAndPolicyAgreement`.
 - `displayTermsAndPolicy(): Label`: returns text with the application's terms.
-- `displayNotificationAboutPayment(paymentStatus: Booolean): Notification`: returns an appropriate notification depending on the type of value returned by `getDonationInfo(donation: Donation): Boolean` of the proxy that corresponds to the chosen payment method (for example, that of the `BankDBProxy` if `paymentMethod` is BankDeposit).
+- `displayNotificationAboutPayment(paymentStatus: Boolean): Notification`: returns an appropriate notification depending on the type of value returned by `getDonationInfo(donation: Donation): Boolean` of the proxy that corresponds to the chosen payment method (for example, that of the `BankDBProxy` if `paymentMethod` is BankDeposit).
 - `displayErrorMessage(): Label`: informs the user with an appropriate message if this donation method is not supported by the organisation, or if there was an error entering the details. It is also responsible for informing the user if the transaction fails after communication with the proxy of the corresponding payment method.
 - `validateUserInput(donation: Donation): Boolean`: checks the values the user entered and, if it finds an error in the details, activates `displayErrorMessage(): Label` to show an appropriate message.
 - `redirectToOrganisationPageGUI(): OrganisationPageGUI`: returns the user to the organisation's page.

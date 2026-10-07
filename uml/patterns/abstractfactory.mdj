@@ -1442,7 +1442,7 @@
 											"top": 301,
 											"width": 237.62451171875,
 											"height": 13,
-											"text": "«Abstarct»"
+											"text": "«Abstract»"
 										},
 										{
 											"_type": "LabelView",
@@ -2323,7 +2323,7 @@
 											"top": 469,
 											"width": 177.0107421875,
 											"height": 13,
-											"text": "«Abstarct»"
+											"text": "«Abstract»"
 										},
 										{
 											"_type": "LabelView",
@@ -3748,7 +3748,7 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "CreateEventPageGUIFactory",
-					"stereotype": "Abstarct",
+					"stereotype": "Abstract",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -4745,7 +4745,7 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "CreateEventPageGUI",
-					"stereotype": "Abstarct",
+					"stereotype": "Abstract",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",

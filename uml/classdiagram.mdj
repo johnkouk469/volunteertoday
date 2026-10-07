@@ -11365,7 +11365,7 @@
 											"top": 870,
 											"width": 216.41064453125,
 											"height": 13,
-											"text": "Notitfication"
+											"text": "Notification"
 										},
 										{
 											"_type": "LabelView",
@@ -13391,7 +13391,7 @@
 											"top": 684,
 											"width": 229.41064453125,
 											"height": 13,
-											"text": "+buttonFilterOrgaqnisationsClick(): void",
+											"text": "+buttonFilterOrganisationsClick(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -18109,7 +18109,7 @@
 											"top": 1433,
 											"width": 220.720703125,
 											"height": 13,
-											"text": "-organizationProfilePicture: Image",
+											"text": "-organisationProfilePicture: Image",
 											"horizontalAlignment": 0
 										},
 										{
@@ -19326,7 +19326,7 @@
 											"top": 2150,
 											"width": 168.72705078125,
 											"height": 13,
-											"text": "-eventDescripiton: Label",
+											"text": "-eventDescription: Label",
 											"horizontalAlignment": 0
 										},
 										{
@@ -21052,7 +21052,7 @@
 											"top": 1250,
 											"width": 342.18310546875,
 											"height": 13,
-											"text": "+setAcceptingDonations(acceptinDonations: Boolean): void",
+											"text": "+setAcceptingDonations(acceptingDonations: Boolean): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -22678,7 +22678,7 @@
 											"top": 2081,
 											"width": 314.7041015625,
 											"height": 13,
-											"text": "+setSpecialOutfit(specialOutifit: String): void",
+											"text": "+setSpecialOutfit(specialOutfit: String): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -22822,7 +22822,7 @@
 											"top": 2201,
 											"width": 314.7041015625,
 											"height": 13,
-											"text": "+getSpeicalEquipment(): Array<String>",
+											"text": "+getSpecialEquipment(): Array<String>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -27423,7 +27423,7 @@
 											"top": 1586,
 											"width": 412.978515625,
 											"height": 13,
-											"text": "+diplayNotificationAboutPayment(paymentStatus: Boolean): Notification",
+											"text": "+displayNotificationAboutPayment(paymentStatus: Boolean): Notification",
 											"horizontalAlignment": 0
 										},
 										{
@@ -28235,7 +28235,7 @@
 											"top": 676,
 											"width": 233.75244140625,
 											"height": 13,
-											"text": "+setPastEvenets(pastEvents: String)",
+											"text": "+setPastEvents(pastEvents: String)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -32774,7 +32774,7 @@
 											"top": 2071,
 											"width": 407.2021484375,
 											"height": 13,
-											"text": "+setIban(iban: Striing): void",
+											"text": "+setIban(iban: String): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -39196,7 +39196,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF4mAhK+GrAfzA="
 									},
-									"name": "diplayNotificationAboutPayment",
+									"name": "displayNotificationAboutPayment",
 									"parameters": [
 										{
 											"_type": "UMLParameter",
@@ -39891,7 +39891,7 @@
 												"$ref": "AAAAAAF4vIHgU2KYBT8="
 											},
 											"name": "iban",
-											"type": "Striing"
+											"type": "String"
 										},
 										{
 											"_type": "UMLParameter",
@@ -41243,7 +41243,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF4kfGsFeeLia8="
 									},
-									"name": "buttonFilterOrgaqnisationsClick",
+									"name": "buttonFilterOrganisationsClick",
 									"parameters": [
 										{
 											"_type": "UMLParameter",
@@ -42368,7 +42368,7 @@
 													"_parent": {
 														"$ref": "AAAAAAF4uSkM8UiMXpg="
 													},
-													"name": "setPastEvenets",
+													"name": "setPastEvents",
 													"parameters": [
 														{
 															"_type": "UMLParameter",
@@ -43325,7 +43325,7 @@
 													"_parent": {
 														"$ref": "AAAAAAF4mBC3sJv4qcc="
 													},
-													"name": "organizationProfilePicture",
+													"name": "organisationProfilePicture",
 													"visibility": "private",
 													"type": "Image"
 												},
@@ -43709,7 +43709,7 @@
 															"_parent": {
 																"$ref": "AAAAAAF4eMf3Wrr17Zg="
 															},
-															"name": "acceptinDonations",
+															"name": "acceptingDonations",
 															"type": "Boolean"
 														},
 														{
@@ -44285,7 +44285,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF4tg+Bhk5yYg0="
 							},
-							"name": "Notitfication",
+							"name": "Notification",
 							"stereotype": "Entity",
 							"attributes": [
 								{
@@ -45298,7 +45298,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF4mBC3opu3dmY="
 									},
-									"name": "eventDescripiton",
+									"name": "eventDescription",
 									"visibility": "private",
 									"type": "Label"
 								},
@@ -46111,7 +46111,7 @@
 											"_parent": {
 												"$ref": "AAAAAAF4jj7UWTILFeA="
 											},
-											"name": "specialOutifit",
+											"name": "specialOutfit",
 											"type": "String"
 										},
 										{
@@ -46293,7 +46293,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF4eGF5UkwjkmA="
 									},
-									"name": "getSpeicalEquipment",
+									"name": "getSpecialEquipment",
 									"parameters": [
 										{
 											"_type": "UMLParameter",

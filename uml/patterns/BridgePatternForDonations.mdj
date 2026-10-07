@@ -1500,7 +1500,7 @@
 											"top": 241,
 											"width": 412.978515625,
 											"height": 13,
-											"text": "+diplayNotificationAboutPayment(paymentStatus: Boolean): Notification",
+											"text": "+displayNotificationAboutPayment(paymentStatus: Boolean): Notification",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1573,7 +1573,7 @@
 											"top": 286,
 											"width": 412.978515625,
 											"height": 13,
-											"text": "+redirectToOrganisationPageGUI(): OrganizationPageGUI",
+											"text": "+redirectToOrganisationPageGUI(): OrganisationPageGUI",
 											"horizontalAlignment": 0
 										}
 									],
@@ -2567,7 +2567,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF5ReX4kwVQdn8="
 							},
-							"name": "diplayNotificationAboutPayment",
+							"name": "displayNotificationAboutPayment",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -2677,7 +2677,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5ReX4kwVPt/E="
 									},
-									"type": "OrganizationPageGUI",
+									"type": "OrganisationPageGUI",
 									"direction": "return"
 								}
 							]
@@ -4447,7 +4447,7 @@
 											"top": 706,
 											"width": 412.978515625,
 											"height": 13,
-											"text": "+diplayNotificationAboutPayment(paymentStatus: Boolean): Notification",
+											"text": "+displayNotificationAboutPayment(paymentStatus: Boolean): Notification",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4520,7 +4520,7 @@
 											"top": 751,
 											"width": 412.978515625,
 											"height": 13,
-											"text": "+redirectToOrganisationPageGUI(): OrganizationPageGUI",
+											"text": "+redirectToOrganisationPageGUI(): OrganisationPageGUI",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4874,7 +4874,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5RkIqUmCDT+s="
 									},
-									"name": "diplayNotificationAboutPayment",
+									"name": "displayNotificationAboutPayment",
 									"parameters": [
 										{
 											"_type": "UMLParameter",
@@ -4986,7 +4986,7 @@
 											"_parent": {
 												"$ref": "AAAAAAF5RkIqUmCCiuE="
 											},
-											"type": "OrganizationPageGUI",
+											"type": "OrganisationPageGUI",
 											"direction": "return"
 										}
 									]
