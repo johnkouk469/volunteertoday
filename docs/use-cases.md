@@ -27,13 +27,13 @@ Feature: Manage personal information
     Given that I am a user
     And I have completed my signup
     When I am asked to fill in my information
-      | Name            | Maria                         | minimum 3 characters |                       | required     |
-      | Surname         | Nikolaou                      | minimum 3 characters | maximum 99 characters | required     |
-      | Age             | 21                            | maximum of 99        | minimum of 18         | required     |
-      | Place of living | Thessaloniki                  |                      |                       | not required |
-      | Work            | Student                       |                      |                       | not required |
-      | Interests       | Fishing, Reading, Environment |                      |                       | not required |
-      | Past Events     | Sfhmmy12, TedX AUTh           |                      |                       | not required |
+      | Name            | Maria                                 | minimum 3 characters |                       | required     |
+      | Surname         | Nikolaou                              | minimum 3 characters | maximum 99 characters | required     |
+      | Age             | 21                                    | maximum of 99        | minimum of 18         | required     |
+      | Place of living | Athens                                |                      |                       | not required |
+      | Work            | Student                               |                      |                       | not required |
+      | Interests       | Fishing, Reading, Environment         |                      |                       | not required |
+      | Past Events     | Beach Cleaning Day, Tree Planting Day |                      |                       | not required |
     Then I should be able to complete the information asked
     When I click “Submit”
     Then I should view message saying “Information successfully submitted”
@@ -43,7 +43,7 @@ Feature: Manage personal information
     Given that I am an organisation
     And I have completed my signup
     When I am asked to fill in my information
-      | Name                | R4a                         | minimum 3 characters | maximum 99 characters | required     |
+      | Name                | Code4Good                   | minimum 3 characters | maximum 99 characters | required     |
       | Founded             | 2021                        |                      | maximum: Today        | not required |
       | Field               | Software, Robotics          |                      |                       | required     |
       | Accepting Donations | no                          |                      |                       | not required |
@@ -59,14 +59,14 @@ Feature: Manage personal information
     When I click on the “Manage information” pencil icon
     Then the “Submit Information” prompt card appears
     And I should be able edit the information I want in the respective bars
-      | Name            | Maria                         | minimum 3 characters |                       | required     |
-      | Surname         | Nikolaou                      | minimum 3 characters | maximum 99 characters | required     |
-      | Age             | 21                            | maximum of 99        | minimum of 18         | required     |
-      | Place of living | Thessaloniki                  |                      |                       | not required |
-      | Work            | Student                       |                      |                       | not required |
-      | Interests       | Fishing, Reading, Environment |                      |                       | not required |
-      | Past Events     | Sfhmmy12, TedX AUTh           |                      |                       | not required |
-      | Add image       | file                          |                      |                       |              |
+      | Name            | Maria                                 | minimum 3 characters |                       | required     |
+      | Surname         | Nikolaou                              | minimum 3 characters | maximum 99 characters | required     |
+      | Age             | 21                                    | maximum of 99        | minimum of 18         | required     |
+      | Place of living | Athens                                |                      |                       | not required |
+      | Work            | Student                               |                      |                       | not required |
+      | Interests       | Fishing, Reading, Environment         |                      |                       | not required |
+      | Past Events     | Beach Cleaning Day, Tree Planting Day |                      |                       | not required |
+      | Add image       | file                                  |                      |                       |              |
     When I click on the “Submit Information” button
     Then I should view a message saying "Information successfully submitted."
     And I should be redirected to my profile page
@@ -77,7 +77,7 @@ Feature: Manage personal information
     When I click on the “Manage information” pencil icon
     Then the “Submit Information” prompt card appears
     And I should be able to edit the information I want in the respective bars
-      | Name                | R4a                         | minimum 3 characters | maximum 99 characters | required     |
+      | Name                | Code4Good                   | minimum 3 characters | maximum 99 characters | required     |
       | Founded             | 2021                        |                      | maximum: Today        | not required |
       | Field               | Software, Robotics          |                      |                       | required     |
       | Accepting Donations | no                          |                      |                       | not required |
@@ -113,13 +113,13 @@ Feature: Search for an organisation or event or user
 
   Scenario Outline: User/organisation searching
     When I type "<phrase>" in the search bar
-      | phrase           | related      |
-      | Robotics For All | R4A          |
-      | Papado           | Papadopoulos |
+      | phrase        | related      |
+      | Code For Good | Code4Good    |
+      | Papado        | Papadopoulos |
     And the search phrase "<phrase>" is entered
     Then results for "<phrase>" are shown
       | Age "21"                   | Maria Nikolaou          |
-      | Founded "1999"             | R4A                     |
+      | Founded "1999"             | Code4Good               |
       | Accepting volunteers "yes" | Greece 2021 Celebration |
     And the related results include "<related>"
     And I should be able to select a search filter
@@ -157,12 +157,12 @@ Feature: View information of organisation or event or user
     When I click on one of the event options in “My Events”
     Then I should be redirected to the event page
     And I should be able to view its information
-      | Name              | Sfhmmy 12       | minimum 3 characters                   |                                        |
-      | Location          | Online          |                                        |                                        |
-      | Date              | 23-25 of April  |                                        |                                        |
-      | Special outfit    | Pajamas         |                                        |                                        |
-      | Special Equipment | Internet Access |                                        |                                        |
-      | Status            | in progress     | recruiting or in progress or completed | maximum number of states of an event 1 |
+      | Name              | Spring Hackathon | minimum 3 characters                   |                                        |
+      | Location          | Online           |                                        |                                        |
+      | Date              | 23-25 of April   |                                        |                                        |
+      | Special outfit    | Pajamas          |                                        |                                        |
+      | Special Equipment | Internet Access  |                                        |                                        |
+      | Status            | in progress      | recruiting or in progress or completed | maximum number of states of an event 1 |
 
   Scenario: View information about an event as a user in an organisation page
     Given that I am a user
@@ -186,7 +186,7 @@ Feature: View information of organisation or event or user
     When I click on an organisation from the results
     Then I should be redirected to the organisation page
     And I should be able to view its information
-      | Name                | R4a                | minimum 3 characters |
+      | Name                | Code4Good          | minimum 3 characters |
       | Founded             | 2021               |                      |
       | Field               | Software, Robotics |                      |
       | Accepting Donations | no                 |                      |
@@ -198,13 +198,13 @@ Feature: View information of organisation or event or user
     When I click on a user from the results
     Then I should be redirected to the user page
     And I should be able to view their information
-      | Name            | Maria Nikolaou                | minimum 3 characters |                       |
-      | Surname         | Nikolaou                      | minimum 3 characters | maximum 99 characters |
-      | Age             | 21                            | maximum of 99        | minimum of 18         |
-      | Place of living | Thessaloniki                  |                      |                       |
-      | Work            | Student                       |                      |                       |
-      | Interests       | Fishing, Reading, Environment |                      |                       |
-      | Past Events     | Sfhmmy12, TedX AUTh           |                      |                       |
+      | Name            | Maria Nikolaou                        | minimum 3 characters |                       |
+      | Surname         | Nikolaou                              | minimum 3 characters | maximum 99 characters |
+      | Age             | 21                                    | maximum of 99        | minimum of 18         |
+      | Place of living | Athens                                |                      |                       |
+      | Work            | Student                               |                      |                       |
+      | Interests       | Fishing, Reading, Environment         |                      |                       |
+      | Past Events     | Beach Cleaning Day, Tree Planting Day |                      |                       |
 ```
 
 ![Activity diagram: view information of organisation or event or user](../uml/diagrams/activity/ViewInformationOfUserOrganisation.png)
@@ -229,16 +229,16 @@ Feature: Create or manage an event
     When I select the option "Create an event"
     Then a new event is created
     And I am asked to submit event information
-      | Name                         | Sfhmmy 12       |                                        | minimum 3 characters |
-      | Location                     | Online          |                                        |                      |
-      | Date                         | 23-25 of April  |                                        |                      |
-      | Status                       | in progress     | recruiting or in progress or completed | maximum of 1         |
-      | Special Equipment            | [“Yes”, “No”]   |                                        |                      |
-      | Add needed special equipment | Internet Access |                                        |                      |
-      | Special outfit               | [“Yes”, “No”]   |                                        |                      |
-      | Add needed special outfit    | Pajamas         |                                        |                      |
-      | Add image                    | file            |                                        |                      |
-      | Add description about event  | text            |                                        |                      |
+      | Name                         | Spring Hackathon |                                        | minimum 3 characters |
+      | Location                     | Online           |                                        |                      |
+      | Date                         | 23-25 of April   |                                        |                      |
+      | Status                       | in progress      | recruiting or in progress or completed | maximum of 1         |
+      | Special Equipment            | [“Yes”, “No”]    |                                        |                      |
+      | Add needed special equipment | Internet Access  |                                        |                      |
+      | Special outfit               | [“Yes”, “No”]    |                                        |                      |
+      | Add needed special outfit    | Pajamas          |                                        |                      |
+      | Add image                    | file             |                                        |                      |
+      | Add description about event  | text             |                                        |                      |
     And I should view a message saying "New event created"
     And a notification should be sent to the members of the organisation
     And I should be redirected to the event page
@@ -300,7 +300,7 @@ Feature: Suggest event
       | Personal information        | (example)                                                  | minimum value        | maximum value         |
       | Name                        | “Ioannis Papadopoulos”                                     | minimum 3 characters | maximum 30 characters |
       | Age                         | 30                                                         | minimum of 18        | maximum of 99         |
-      | Location                    | “Thessaloniki”                                             | minimum 3 characters | maximum 30 characters |
+      | Location                    | “Athens”                                                   | minimum 3 characters | maximum 30 characters |
       | Profession                  | “Teacher”                                                  | minimum 3 characters | maximum 30 characters |
       | Interests                   | “Hiking”                                                   | minimum 3 characters | maximum 30 characters |
       | History of volunteer events | “Hellenic Rescue Team Expedition in Olympus (summer 2016)” | minimum 3 characters | maximum 30 characters |

@@ -13,7 +13,7 @@ Feature: Suggest event
       | Personal information        | (example)                                                  | minimum value        | maximum value         |
       | Name                        | “Ioannis Papadopoulos”                                     | minimum 3 characters | maximum 30 characters |
       | Age                         | 30                                                         | minimum of 18        | maximum of 99         |
-      | Location                    | “Thessaloniki”                                             | minimum 3 characters | maximum 30 characters |
+      | Location                    | “Athens”                                                   | minimum 3 characters | maximum 30 characters |
       | Profession                  | “Teacher”                                                  | minimum 3 characters | maximum 30 characters |
       | Interests                   | “Hiking”                                                   | minimum 3 characters | maximum 30 characters |
       | History of volunteer events | “Hellenic Rescue Team Expedition in Olympus (summer 2016)” | minimum 3 characters | maximum 30 characters |

@@ -13,12 +13,12 @@ Feature: View information of organisation or event or user
     When I click on one of the event options in “My Events”
     Then I should be redirected to the event page
     And I should be able to view its information
-      | Name              | Sfhmmy 12       | minimum 3 characters                   |                                        |
-      | Location          | Online          |                                        |                                        |
-      | Date              | 23-25 of April  |                                        |                                        |
-      | Special outfit    | Pajamas         |                                        |                                        |
-      | Special Equipment | Internet Access |                                        |                                        |
-      | Status            | in progress     | recruiting or in progress or completed | maximum number of states of an event 1 |
+      | Name              | Spring Hackathon | minimum 3 characters                   |                                        |
+      | Location          | Online           |                                        |                                        |
+      | Date              | 23-25 of April   |                                        |                                        |
+      | Special outfit    | Pajamas          |                                        |                                        |
+      | Special Equipment | Internet Access  |                                        |                                        |
+      | Status            | in progress      | recruiting or in progress or completed | maximum number of states of an event 1 |
 
   Scenario: View information about an event as a user in an organisation page
     Given that I am a user
@@ -42,7 +42,7 @@ Feature: View information of organisation or event or user
     When I click on an organisation from the results
     Then I should be redirected to the organisation page
     And I should be able to view its information
-      | Name                | R4a                | minimum 3 characters |
+      | Name                | Code4Good          | minimum 3 characters |
       | Founded             | 2021               |                      |
       | Field               | Software, Robotics |                      |
       | Accepting Donations | no                 |                      |
@@ -54,10 +54,10 @@ Feature: View information of organisation or event or user
     When I click on a user from the results
     Then I should be redirected to the user page
     And I should be able to view their information
-      | Name            | Maria Nikolaou                | minimum 3 characters |                       |
-      | Surname         | Nikolaou                      | minimum 3 characters | maximum 99 characters |
-      | Age             | 21                            | maximum of 99        | minimum of 18         |
-      | Place of living | Thessaloniki                  |                      |                       |
-      | Work            | Student                       |                      |                       |
-      | Interests       | Fishing, Reading, Environment |                      |                       |
-      | Past Events     | Sfhmmy12, TedX AUTh           |                      |                       |
+      | Name            | Maria Nikolaou                        | minimum 3 characters |                       |
+      | Surname         | Nikolaou                              | minimum 3 characters | maximum 99 characters |
+      | Age             | 21                                    | maximum of 99        | minimum of 18         |
+      | Place of living | Athens                                |                      |                       |
+      | Work            | Student                               |                      |                       |
+      | Interests       | Fishing, Reading, Environment         |                      |                       |
+      | Past Events     | Beach Cleaning Day, Tree Planting Day |                      |                       |

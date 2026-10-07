@@ -1,2 +1,2 @@
-{"_id":{"$oid":"60b3a3426dcaee0012a8a104"},"organisationName":"WWF","founded":"1910","acceptingDonations":"Yes","bankAccount":1.23456789E+09,"memberships":{}}
-{"_id":{"$oid":"60b3a40d6dcaee0012a8a105"},"organisationName":"HamogeloTouPaidiou","founded":"1995","acceptingDonations":"Yes","bankAccount":1.23456789012345E+14,"memberships":{}}
+{"_id":{"$oid":"60b3a3426dcaee0012a8a104"},"organisationName":"GreenValley","founded":"1910","acceptingDonations":"Yes","bankAccount":1.23456789E+09,"memberships":{}}
+{"_id":{"$oid":"60b3a40d6dcaee0012a8a105"},"organisationName":"HelpingHands","founded":"1995","acceptingDonations":"Yes","bankAccount":1.23456789012345E+14,"memberships":{}}

@@ -8,13 +8,13 @@ Feature: Manage personal information
     Given that I am a user
     And I have completed my signup
     When I am asked to fill in my information
-      | Name            | Maria                         | minimum 3 characters |                       | required     |
-      | Surname         | Nikolaou                      | minimum 3 characters | maximum 99 characters | required     |
-      | Age             | 21                            | maximum of 99        | minimum of 18         | required     |
-      | Place of living | Thessaloniki                  |                      |                       | not required |
-      | Work            | Student                       |                      |                       | not required |
-      | Interests       | Fishing, Reading, Environment |                      |                       | not required |
-      | Past Events     | Sfhmmy12, TedX AUTh           |                      |                       | not required |
+      | Name            | Maria                                 | minimum 3 characters |                       | required     |
+      | Surname         | Nikolaou                              | minimum 3 characters | maximum 99 characters | required     |
+      | Age             | 21                                    | maximum of 99        | minimum of 18         | required     |
+      | Place of living | Athens                                |                      |                       | not required |
+      | Work            | Student                               |                      |                       | not required |
+      | Interests       | Fishing, Reading, Environment         |                      |                       | not required |
+      | Past Events     | Beach Cleaning Day, Tree Planting Day |                      |                       | not required |
     Then I should be able to complete the information asked
     When I click “Submit”
     Then I should view message saying “Information successfully submitted”
@@ -24,7 +24,7 @@ Feature: Manage personal information
     Given that I am an organisation
     And I have completed my signup
     When I am asked to fill in my information
-      | Name                | R4a                         | minimum 3 characters | maximum 99 characters | required     |
+      | Name                | Code4Good                   | minimum 3 characters | maximum 99 characters | required     |
       | Founded             | 2021                        |                      | maximum: Today        | not required |
       | Field               | Software, Robotics          |                      |                       | required     |
       | Accepting Donations | no                          |                      |                       | not required |
@@ -40,14 +40,14 @@ Feature: Manage personal information
     When I click on the “Manage information” pencil icon
     Then the “Submit Information” prompt card appears
     And I should be able edit the information I want in the respective bars
-      | Name            | Maria                         | minimum 3 characters |                       | required     |
-      | Surname         | Nikolaou                      | minimum 3 characters | maximum 99 characters | required     |
-      | Age             | 21                            | maximum of 99        | minimum of 18         | required     |
-      | Place of living | Thessaloniki                  |                      |                       | not required |
-      | Work            | Student                       |                      |                       | not required |
-      | Interests       | Fishing, Reading, Environment |                      |                       | not required |
-      | Past Events     | Sfhmmy12, TedX AUTh           |                      |                       | not required |
-      | Add image       | file                          |                      |                       |              |
+      | Name            | Maria                                 | minimum 3 characters |                       | required     |
+      | Surname         | Nikolaou                              | minimum 3 characters | maximum 99 characters | required     |
+      | Age             | 21                                    | maximum of 99        | minimum of 18         | required     |
+      | Place of living | Athens                                |                      |                       | not required |
+      | Work            | Student                               |                      |                       | not required |
+      | Interests       | Fishing, Reading, Environment         |                      |                       | not required |
+      | Past Events     | Beach Cleaning Day, Tree Planting Day |                      |                       | not required |
+      | Add image       | file                                  |                      |                       |              |
     When I click on the “Submit Information” button
     Then I should view a message saying "Information successfully submitted."
     And I should be redirected to my profile page
@@ -58,7 +58,7 @@ Feature: Manage personal information
     When I click on the “Manage information” pencil icon
     Then the “Submit Information” prompt card appears
     And I should be able to edit the information I want in the respective bars
-      | Name                | R4a                         | minimum 3 characters | maximum 99 characters | required     |
+      | Name                | Code4Good                   | minimum 3 characters | maximum 99 characters | required     |
       | Founded             | 2021                        |                      | maximum: Today        | not required |
       | Field               | Software, Robotics          |                      |                       | required     |
       | Accepting Donations | no                          |                      |                       | not required |

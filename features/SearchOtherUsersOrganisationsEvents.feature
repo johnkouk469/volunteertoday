@@ -9,13 +9,13 @@ Feature: Search for an organisation or event or user
 
   Scenario Outline: User/organisation searching
     When I type "<phrase>" in the search bar
-      | phrase           | related      |
-      | Robotics For All | R4A          |
-      | Papado           | Papadopoulos |
+      | phrase        | related      |
+      | Code For Good | Code4Good    |
+      | Papado        | Papadopoulos |
     And the search phrase "<phrase>" is entered
     Then results for "<phrase>" are shown
       | Age "21"                   | Maria Nikolaou          |
-      | Founded "1999"             | R4A                     |
+      | Founded "1999"             | Code4Good               |
       | Accepting volunteers "yes" | Greece 2021 Celebration |
     And the related results include "<related>"
     And I should be able to select a search filter

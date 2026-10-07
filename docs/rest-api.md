@@ -508,7 +508,7 @@ The requirements it serves, as written in the API definition:
 
 **Test of the endpoint and server response**
 
-Test call on the SwaggerHub virtual server: `GET /search?keyword=Hamogelo`. Server response: 200, `content-length: 474`, body: a `Search_Results`.
+Test call on the SwaggerHub virtual server: `GET /search?keyword=HelpingHands`. Server response: 200, `content-length: 474`, body: a `Search_Results`.
 
 ### 6.2.7 Other data models that were used
 

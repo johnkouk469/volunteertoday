@@ -13,16 +13,16 @@ Feature: Create or manage an event
     When I select the option "Create an event"
     Then a new event is created
     And I am asked to submit event information
-      | Name                         | Sfhmmy 12       |                                        | minimum 3 characters |
-      | Location                     | Online          |                                        |                      |
-      | Date                         | 23-25 of April  |                                        |                      |
-      | Status                       | in progress     | recruiting or in progress or completed | maximum of 1         |
-      | Special Equipment            | [“Yes”, “No”]   |                                        |                      |
-      | Add needed special equipment | Internet Access |                                        |                      |
-      | Special outfit               | [“Yes”, “No”]   |                                        |                      |
-      | Add needed special outfit    | Pajamas         |                                        |                      |
-      | Add image                    | file            |                                        |                      |
-      | Add description about event  | text            |                                        |                      |
+      | Name                         | Spring Hackathon |                                        | minimum 3 characters |
+      | Location                     | Online           |                                        |                      |
+      | Date                         | 23-25 of April   |                                        |                      |
+      | Status                       | in progress      | recruiting or in progress or completed | maximum of 1         |
+      | Special Equipment            | [“Yes”, “No”]    |                                        |                      |
+      | Add needed special equipment | Internet Access  |                                        |                      |
+      | Special outfit               | [“Yes”, “No”]    |                                        |                      |
+      | Add needed special outfit    | Pajamas          |                                        |                      |
+      | Add image                    | file             |                                        |                      |
+      | Add description about event  | text             |                                        |                      |
     And I should view a message saying "New event created"
     And a notification should be sent to the members of the organisation
     And I should be redirected to the event page
