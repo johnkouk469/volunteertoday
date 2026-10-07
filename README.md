@@ -19,7 +19,7 @@ The two deliverables were *User Requirements and System Specification* (11 April
 | [1. System requirements](docs/requirements.md) | 10 functional and 8 non-functional requirements with priorities, the users and external systems, and the definitions used throughout. |
 | [2. Use cases](docs/use-cases.md) | The use-case diagram, and for each of the eight features its user story, its scenarios in Gherkin (28 in total, also in [`features/`](features)) and its activity diagram. |
 | 3. UI mock-ups | 17 screens designed in Figma: sign in and sign up, home, event, search, organisation and user pages, and the donation flows (card, PayPal, Amazon Pay, bank deposit). |
-| 4. Static model | The class model, in nine packages, using the Boundary-Entity-Controller approach. |
+| [4. Static model](docs/static-model.md) | The class model: 43 classes in nine packages, using the Boundary-Entity-Controller approach, with every class's attributes and methods and a class diagram for each package. |
 | 5. Design patterns | Virtual Proxy, Abstract Factory and Bridge, each chosen to satisfy a specific non-functional requirement. |
 | 6. REST API | The system as REST resources (user, organisation, event, notification, donation, plus search and recommendation), documented as an OpenAPI file. |
 | 7. Node-RED implementation | The REST API built as Node-RED flows on top of MongoDB, and how each user story maps onto them. |
