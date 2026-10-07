@@ -1,0 +1,28 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Node-RED runtime state and credentials (created when the flows are run locally)
+.config.*.json
+.flows.json.backup
+flows_cred.json
+*.log
+
+# Editors, backups and OS files
+.idea/
+.vscode/
+*.bak
+*~
+.DS_Store
+Thumbs.db

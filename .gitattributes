@@ -1,0 +1,14 @@
+# Normalise line endings: LF in the repository and in working copies
+* text=auto eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+
+# StarUML models are large JSON files: keep them out of language statistics
+*.mdj linguist-generated=true
