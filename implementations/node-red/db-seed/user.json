@@ -1,0 +1,4 @@
+{"_id":{"$oid":"60b3a2326dcaee0012a8a100"},"username":"jane_roe","name":"Jane","surname":"Roe","age":"21","work":"Student","pastEvents":{},"currentEvents":{},"memberships":{}}
+{"_id":{"$oid":"60b3a28b6dcaee0012a8a101"},"username":"john_doe","name":"John","surname":"Doe","age":"21","work":"Student","pastEvents":{},"currentEvents":{},"memberships":{}}
+{"_id":{"$oid":"60b3a2c66dcaee0012a8a102"},"username":"maria_nikolaou","name":"Maria","surname":"Nikolaou","age":"21","work":"Student","pastEvents":{},"currentEvents":{},"memberships":{}}
+{"_id":{"$oid":"60b3a2fb6dcaee0012a8a103"},"username":"nikos_papadopoulos","name":"Nikos","surname":"Papadopoulos","age":"21","work":"Student","pastEvents":{},"currentEvents":{},"memberships":{}}

@@ -22,7 +22,7 @@ The two deliverables were *User Requirements and System Specification* (11 April
 | [4. Static model](docs/static-model.md) | The class model: 43 classes in nine packages, using the Boundary-Entity-Controller approach, with every class's attributes and methods and a class diagram for each package. |
 | [5. Design patterns](docs/design-patterns.md) | Virtual Proxy, Abstract Factory and Bridge, each chosen to satisfy a specific non-functional requirement, with their class diagrams. |
 | [6. REST API](docs/rest-api.md) | The system as REST resources (user, organisation, event, notification, donation, plus search and recommendation), documented endpoint by endpoint, with the OpenAPI definition in [`api/`](api). |
-| 7. Node-RED implementation | The REST API built as Node-RED flows on top of MongoDB, and how each user story maps onto them. |
+| [7. Node-RED implementation](docs/node-red-implementation.md) | The REST API built as Node-RED flows on top of MongoDB, and how each user story maps onto them, with the flows and test data in [`implementations/node-red/`](implementations/node-red). |
 
 ## How the design fits together
 
