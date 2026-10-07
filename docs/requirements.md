@@ -1,6 +1,6 @@
 # 1. System requirements
 
-The functional and non-functional requirements of VolunteerToday, the users and external systems around it, and the terms used throughout the project. This page is the English version of section 1 of the group's *User Requirements and System Specification* (version 2.0, 11 April 2021).
+The functional and non-functional requirements of VolunteerToday, the users and external systems around it, and the terms used throughout the project. This page is the English version of section 1 of the group's *User Requirements and System Specification* (version 2.0, 11 April 2021), with the one requirement that the second deliverable added (NFR-9).
 
 **Notation.** `FR-n` is a functional requirement and `NFR-n` a non-functional requirement. Each requirement carries two scores out of 10: **user priority** (how much the user needs it) and **technical priority** (how much the system depends on it). The source distinguishes requirements the system *must* meet from those it *should* meet; the wording below keeps that distinction. <ins>Underlined</ins> terms are defined in [section 1.4](#14-definitions).
 
@@ -26,6 +26,7 @@ The functional and non-functional requirements of VolunteerToday, the users and 
 | NFR-6 | Dates shown as DD/MM/YY | should | 6 | 2 |
 | NFR-7 | Donations comply with PCI DSS | must | 10 | 10 |
 | NFR-8 | Personal data handling complies with GDPR | must | 10 | 1 |
+| NFR-9 | Support current and future payment methods | must | 7 | 2 |
 
 The short names in the second column are summaries; the full wording of each requirement follows.
 
@@ -241,11 +242,23 @@ The management of personal data must comply with the **GDPR**³.
 
 **Technical priority:** 1/10. The system can stay functional even if the personal data protection rules are not applied.
 
+### 1.3.7 Extensibility requirements
+
+#### NFR-9
+
+The <ins>system</ins> must support the payment of <ins>donations</ins> through the <ins>payment methods</ins> and new methods that may be added in the future.
+
+**Description:** The donation system must be able to communicate with a variety of different APIs of banks and electronic payment services, so that users can pay donations.
+
+**User priority:** 7/10. It is important for the user to have the choice of several payment methods.
+
+**Technical priority:** 2/10. It is not necessary for the proper functioning of the application.
+
+This requirement is satisfied by the Bridge pattern, described in [5.3 Bridge](design-patterns.md#53-bridge).
+
 ¹ <https://www.nngroup.com/articles/response-times-3-important-limits/>
 ² <https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard>
 ³ <https://gdpr.eu/>
-
-A further non-functional requirement, support for current and future payment methods, is added with the design patterns in [5. Design patterns](design-patterns.md).
 
 ## 1.4 Definitions
 
@@ -253,7 +266,7 @@ A further non-functional requirement, support for current and future payment met
 |---|---|
 | **Application functions** | All the functions available to the user, such as the notifications sent by the system, search, the relationships between users and organisations, the creation of events, and so on. |
 | **Current volunteer event** | A volunteer event that still accepts volunteers. Its information marks it with the status `recruiting`. |
-| **Donation** | The user can pay a sum of money to an organisation using a credit card. |
+| **Donation** | The user can pay a sum of money to an organisation with a set of <ins>payment methods</ins>. |
 | **Electronic payment system** | Implements the acceptance of electronic transactions from users to organisations. |
 | **Event information** | Name, place, time, whether special clothing is needed, equipment, whether it accepts new volunteers, whether it is in progress and whether it has been completed. |
 | **Homepage** | The home page of the website or of the mobile app. |
@@ -264,7 +277,7 @@ A further non-functional requirement, support for current and future payment met
 | **Notify** | The function of sending messages to the user inside the application. It is the responsibility of the system. |
 | **Organisation** | Any natural person, or legal person of public or private law, that uses the application. |
 | **Organisation information** | Name, year of founding, field of activity (the kinds of volunteer events it organises), its volunteer events and, if it accepts donations, its bank account IBAN. |
-| **Payment methods** | All the methods available for donating to an organisation through the web application: bank transfer, PayPal, Google Pay or Amazon Pay. |
+| **Payment methods** | All the methods available for donating to an organisation through the web application. For the present version these are credit or debit card, PayPal, Amazon Pay or bank transfer. |
 | **Profile** | The application screen that holds all the information of a user or organisation. |
 | **System** | All the functional parts of the application: the interface and the business logic. |
 | **User** | The natural person who uses the application. |

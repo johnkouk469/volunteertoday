@@ -1,0 +1,641 @@
+---
+swagger: "2.0"
+info:
+  description: VolunteerToday API
+  version: 1.0.0
+  title: VolunteerToday
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+host: virtserver.swaggerhub.com
+basePath: /Aristotle-University1/VolunteerToday/1.0.0
+tags:
+- name: user
+  description: User accounts
+- name: organisation
+  description: Organisation accounts
+- name: event
+  description: Volunteer Events
+- name: notification
+  description: Notifications
+- name: donation
+  description: Donations to organisations
+schemes:
+- https
+security:
+- JWTbearerAuth: []
+paths:
+  /user:
+    post:
+      tags:
+      - user
+      summary: Create a new user account
+      description: |
+        FR-1 - The user/organisation must be able to manage their information.
+      operationId: createUser
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: User model
+        required: true
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        "200":
+          description: Successful operation
+        "400":
+          description: Bad input parameter
+  /organisation:
+    post:
+      tags:
+      - organisation
+      summary: Create a new organisation account
+      description: |
+        FR-1 - The user/organisation must be able to manage their information.
+      operationId: createOrganisation
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Organisation model
+        required: true
+        schema:
+          $ref: '#/definitions/Organisation'
+      responses:
+        "400":
+          description: Bad input parameter
+        "200":
+          description: successful operation
+  /organisation/{organisationId}/event:
+    post:
+      tags:
+      - event
+      summary: Create a new event
+      description: |
+        FR-4 - The organisation must be able to create an event and to manage its information
+        FR-7 - The system should be able to notify a member of an organisation about current volunteer events of the latter.
+      operationId: createEvent
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: organisationId
+        in: path
+        description: Organisation which the event belongs to
+        required: true
+        type: integer
+      - in: body
+        name: body
+        description: Event model
+        required: true
+        schema:
+          $ref: '#/definitions/Event'
+      responses:
+        "400":
+          description: Bad input parameter
+        "200":
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Notification'
+      security:
+      - JWTbearerAuth: []
+  /user/{userId}:
+    get:
+      tags:
+      - user
+      summary: Find users
+      description: FR-3 - The user/organisation must be able to view user/organisation/event information
+      operationId: getUser
+      produces:
+      - application/json
+      parameters:
+      - name: userId
+        in: path
+        description: User's identification number
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: '#/definitions/User'
+        "400":
+          description: Invalid userId value
+      security:
+      - JWTbearerAuth: []
+    put:
+      tags:
+      - user
+      summary: Update user information
+      description: |
+        FR-1 - The user/organisation must be able to manage their information.
+        FR-6 - The user should be able to become or unbecome member of an organisation
+        FR-8 - The user must be able to become or unbecome a volunteer of a volunteer event
+      operationId: updateUser
+      produces:
+      - application/json
+      parameters:
+      - name: userId
+        in: path
+        description: User whose information is to be updated
+        required: true
+        type: integer
+      - in: body
+        name: body
+        description: User model
+        required: true
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        "400":
+          description: Bad input parameter
+        "200":
+          description: successful operation
+      security:
+      - JWTbearerAuth: []
+  /user/{userId}/recommend:
+    get:
+      tags:
+      - user
+      summary: Recommend active events
+      description: |
+        FR-5 - The system must be able to suggest current volunteer events to a user based on their information
+      operationId: recommendEvent
+      produces:
+      - application/json
+      parameters:
+      - name: userId
+        in: path
+        description: User that gets the recommendation
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Event'
+        "400":
+          description: Bad input parameter
+      security:
+      - JWTbearerAuth: []
+  /organisation/{organisationId}:
+    get:
+      tags:
+      - organisation
+      summary: Find organisations
+      description: FR-3 - The user/organisation must be able to view user/organisation/event information
+      operationId: getOrganisation
+      produces:
+      - application/xml
+      - application/json
+      parameters:
+      - name: organisationId
+        in: path
+        description: The organisationId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Organisation'
+        "400":
+          description: Invalid organisationId value
+      security:
+      - JWTbearerAuth: []
+    put:
+      tags:
+      - organisation
+      summary: Update organisation information
+      description: |
+        FR-1 - The user/organisation must be able to manage their information.
+        FR-6 - The user should be able to become or unbecome member of an organisation
+      operationId: updateOrganisation
+      produces:
+      - application/json
+      parameters:
+      - name: organisationId
+        in: path
+        description: The organisation to be updated
+        required: true
+        type: integer
+      - in: body
+        name: body
+        description: Organisation model
+        required: true
+        schema:
+          $ref: '#/definitions/Organisation'
+      responses:
+        "400":
+          description: Bad input parameter
+        "200":
+          description: successful operation
+      security:
+      - JWTbearerAuth: []
+  /organisation/{organisationId}/event/{eventId}:
+    get:
+      tags:
+      - event
+      summary: Find events
+      description: |
+        FR-3 - The user/organisation must be able to view user/organisation/event information
+      operationId: getEvent
+      produces:
+      - application/json
+      parameters:
+      - name: organisationId
+        in: path
+        description: The organisationId
+        required: true
+        type: integer
+      - name: eventId
+        in: path
+        description: The eventId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Event'
+        "400":
+          description: Invalid eventId value
+      security:
+      - JWTbearerAuth: []
+    put:
+      tags:
+      - event
+      summary: Update event information/Join/Leave Event
+      description: |
+        FR-4 - The organisation must be able to create an event and to manage its information.
+        FR-8 - The user must be able to become or unbecome a volunteer of a volunteer event.
+        FR-9 - The system should be able to notify a volunteer about changes of the volunteer event.
+      operationId: updateEvent
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: organisationId
+        in: path
+        description: Organisation which the event belongs to
+        required: true
+        type: integer
+      - name: eventId
+        in: path
+        description: Event whose information we want to update
+        required: true
+        type: integer
+      - in: body
+        name: body
+        description: Event model
+        required: true
+        schema:
+          $ref: '#/definitions/Event'
+      responses:
+        "400":
+          description: Bad input parameter
+        "200":
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Notification'
+      security:
+      - JWTbearerAuth: []
+  /user/login:
+    put:
+      tags:
+      - user
+      summary: Log user into the system
+      description: |
+        FR-0 - A user must be able to login to their account by providing their
+        username and password
+      operationId: loginUser
+      produces:
+      - application/json
+      parameters:
+      - name: username
+        in: query
+        description: The user name for login
+        required: true
+        type: string
+      - name: password
+        in: query
+        description: The password for login in clear text
+        required: true
+        type: string
+      responses:
+        "200":
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              type: integer
+              format: int32
+              description: calls per hour allowed by the user
+            X-Expires-After:
+              type: string
+              format: date-time
+              description: date in UTC when token expires
+          schema:
+            $ref: '#/definitions/Token'
+        "400":
+          description: Invalid username/password supplied
+  /organisation/{organisationId}/donation:
+    post:
+      tags:
+      - donation
+      summary: Create a donation for an organisation
+      description: 'FR-10 - A user should be able to make a donation to an organisation via payment methods '
+      operationId: addDonation
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: organisationId
+        in: path
+        description: Organisation which the donation is made for
+        required: true
+        type: integer
+        format: int64
+      - in: body
+        name: donation
+        description: The donation made
+        required: true
+        schema:
+          $ref: '#/definitions/Donation'
+      responses:
+        "200":
+          description: Successful donation submission
+          schema:
+            $ref: '#/definitions/Donation'
+        "400":
+          description: Unsuccessful donation submission
+        "405":
+          description: Invalid donation parameters as input
+      security:
+      - volunteerToday: []
+  /search:
+    get:
+      tags:
+      - user
+      - organisation
+      summary: User or organisation can search for users, organisations or events
+      description: |
+        FR-2 - A user/organisation must be able to search users/organisations/events by information of user/organisation/event
+      operationId: search
+      produces:
+      - application/json
+      parameters:
+      - name: keyword
+        in: query
+        description: Keyword to search by
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/Search_Results'
+        "400":
+          description: Bad input parameter
+      security:
+      - JWTbearerAuth: []
+  /organisation/{organisationId}/event/{eventId}/notification:
+    post:
+      tags:
+      - notification
+      summary: Create a notification
+      description: |
+        FR-7 - The system should be able to notify the members of an organisation about current volunteer events of the latter
+        FR-9 - The system should be able to notify volunteers about changes of the volunteer event
+      operationId: createNotification
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: organisationId
+        in: path
+        description: the identification number of the organisation whose event the notification is about
+        required: true
+        type: integer
+      - name: eventId
+        in: path
+        description: the identification number of the event the notification is about
+        required: true
+        type: integer
+      - in: body
+        name: notification
+        description: Notification Model
+        required: true
+        schema:
+          $ref: '#/definitions/Notification'
+      responses:
+        "200":
+          description: Successful creation
+        "400":
+          description: Bad input parameter
+      security:
+      - JWTbearerAuth: []
+  /organisation/{organisationId}/event/{eventId}/notification/{notificationId}:
+    get:
+      tags:
+      - notification
+      summary: Retrieves a notification
+      description: "FR-7 - The system should be able to notify the members of an organisation about current volunteer events of the latter \nFR-9 - The system should be able to notify volunteers about changes of their volunteer events\n"
+      operationId: retrieveNotification
+      produces:
+      - application/json
+      parameters:
+      - name: organisationId
+        in: path
+        description: the identification number of the organisation whose event the notification is about
+        required: true
+        type: integer
+      - name: eventId
+        in: path
+        description: the identification number of the event the notification is about
+        required: true
+        type: integer
+      - name: notificationId
+        in: path
+        description: the identification number of the notification
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Successful retrieval
+          schema:
+            $ref: '#/definitions/Notification'
+        "400":
+          description: Failed to retrieve the notification
+securityDefinitions:
+  JWTbearerAuth:
+    type: apiKey
+    name: Authorization
+    in: header
+  volunteerToday:
+    type: oauth2
+    authorizationUrl: https://petstore.swagger.io/volunteerToday.com/authorize
+    flow: implicit
+    scopes:
+      write:Donations: Create new donations but not modify old ones
+definitions:
+  User:
+    type: object
+    properties:
+      name:
+        type: string
+      surname:
+        type: string
+      age:
+        type: integer
+        format: int8
+      placeOfLiving:
+        type: string
+      work:
+        type: string
+      pastEvents:
+        type: array
+        items:
+          $ref: '#/definitions/Event'
+      currentEvents:
+        type: array
+        items:
+          $ref: '#/definitions/Event'
+      memberships:
+        type: array
+        items:
+          $ref: '#/definitions/Organisation'
+    xml:
+      name: User
+  Organisation:
+    type: object
+    properties:
+      name:
+        type: string
+      founded:
+        type: string
+      acceptingDonations:
+        type: boolean
+      bankAccount:
+        type: array
+        items:
+          type: integer
+          format: int64
+      memberships:
+        type: array
+        items:
+          $ref: '#/definitions/User'
+    xml:
+      name: Organisation
+  Event:
+    type: object
+    properties:
+      name:
+        type: string
+      location:
+        type: string
+      date:
+        type: string
+        format: date-time
+      specialOutfit:
+        type: array
+        items:
+          type: string
+      specialEquipment:
+        type: array
+        items:
+          type: string
+      status:
+        type: string
+        enum:
+        - in progress
+        - recruiting
+        - completed
+      volunteers:
+        type: array
+        items:
+          $ref: '#/definitions/User'
+  Donation:
+    type: object
+    properties:
+      paymentMethod:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      name:
+        type: string
+      surname:
+        type: string
+      cardNumber:
+        type: integer
+      expiryDate:
+        type: string
+      securityCode:
+        type: integer
+        format: int32
+      postalCode:
+        type: integer
+        format: int64
+      paypalMailAddress:
+        type: string
+      paypalPhoneNumber:
+        type: integer
+      amazonPayMailAddress:
+        type: string
+      amazonPayPhoneNumber:
+        type: integer
+      amazonPayPassword:
+        type: string
+      iban:
+        type: string
+      pin:
+        type: integer
+        format: int32
+  Token:
+    type: object
+    properties:
+      token:
+        type: string
+        description: JWT token
+  Search_Results:
+    type: object
+    properties:
+      events:
+        type: array
+        items:
+          $ref: '#/definitions/Event'
+      organisation:
+        type: array
+        items:
+          $ref: '#/definitions/Organisation'
+      user:
+        type: array
+        items:
+          $ref: '#/definitions/User'
+  Notification:
+    type: object
+    properties:
+      message:
+        type: string
+      date:
+        type: string
+        format: date-time
+        description: the date and time when the notification was created
+    xml:
+      name: Notification
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

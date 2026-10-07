@@ -6,7 +6,7 @@ Section 1 of the group's *Software Specification and System Implementation* (ver
 |---|---|---|
 | [5.1 Virtual Proxy](#51-virtual-proxy) | Structural | [NFR-1](requirements.md#nfr-1) (1000 simultaneous users) and [NFR-3](requirements.md#nfr-3) (home page loads in under 1 second) |
 | [5.2 Abstract Factory](#52-abstract-factory) | Creational | [NFR-5](requirements.md#nfr-5) (iOS and Android support) |
-| [5.3 Bridge](#53-bridge) | Structural | A new requirement: current and future payment methods |
+| [5.3 Bridge](#53-bridge) | Structural | NFR-9 (current and future payment methods) |
 
 The models of the patterns are in [`uml/patterns/`](../uml/patterns).
 
@@ -30,13 +30,17 @@ NFR-5 requires that the application can be used on different versions of the iOS
 
 For the needs of the second deliverable a new non-functional requirement is added that did not exist in the original system specification:
 
-**Non-functional requirement:** The <ins>system</ins> must support the payment of <ins>donations</ins> through the <ins>payment methods</ins> and new methods that may be added in the future.
+### NFR-9
 
-Description: The donation system must be able to communicate with a variety of different APIs of banks and electronic payment services, so that users can pay donations.
+The <ins>system</ins> must support the payment of <ins>donations</ins> through the <ins>payment methods</ins> and new methods that may be added in the future.
 
-User Priority: (7/10) It is important for the user to have the choice of several payment methods.
+**Description:** The donation system must be able to communicate with a variety of different APIs of banks and electronic payment services, so that users can pay donations.
 
-Technical Priority: (2/10) It is not necessary for the proper functioning of the application.
+**User priority:** 7/10. It is important for the user to have the choice of several payment methods.
+
+**Technical priority:** 2/10. It is not necessary for the proper functioning of the application.
+
+The requirement is also listed with the other non-functional requirements in [section 1.3.7](requirements.md#137-extensibility-requirements).
 
 The requirement that the system must support payment through various methods, and the ability to add new payment methods in the future, is satisfied by the use of the Bridge pattern.
 
@@ -50,7 +54,7 @@ In this way the system gains extensibility, because it is now possible to add ne
 
 ## Definitions
 
-The second deliverable restates three of the definitions of [section 1.4](requirements.md#14-definitions). The list of payment methods here is the one the design uses.
+Three terms of [section 1.4](requirements.md#14-definitions) matter for this section.
 
 | Term | Meaning |
 |---|---|
