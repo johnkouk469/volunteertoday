@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="VolunteerToday logo: three stylised people" width="120">
+</p>
+
 # VolunteerToday
 
 *Connect with organisations near you and start planning your next volunteer opportunity.*
@@ -6,7 +10,7 @@ VolunteerToday is a web and mobile application that brings volunteers and volunt
 
 This repository holds the complete analysis and design of the system, from user requirements to an implementation of its REST API in Node-RED. It was built by a team of four for the *Software Engineering I* course (spring 2021, School of Electrical and Computer Engineering, Aristotle University of Thessaloniki).
 
-**Everything here is based on the project's two deliverables, written at the time, in spring 2021. Nothing new has been added to the design since; this repository presents that original work, in English, page by page.**
+**Everything here is based on the project's two deliverables, written at the time, in spring 2021. The design is the original one. The only differences are minor adjustments made while preparing this repository, such as fixed typos and small inconsistencies in the models, the API definition and the mock-ups; this repository presents that work, in English, page by page.**
 
 The original deliverables were written in Greek. The English text here is a translation made later, and the personal details in the example data (names, email addresses, passwords) have been replaced with generic values.
 
@@ -49,3 +53,9 @@ The course taught requirements engineering and software design through one semes
 ## Status
 
 This is a design project with a prototype implementation, not a production system. The user interface exists as mock-ups only. The payment parts describe how a donation flow could be structured; a real system would hand card data to a payment provider and never store it.
+
+## Licence
+
+The documents, models, mock-ups, API definition and flows are released under the [MIT License](LICENSE). Two kinds of material are not covered by it: the logos and brand marks shown in the mock-ups (Google, Facebook, PayPal, Amazon Pay, Mastercard, Visa and others) belong to their owners and appear only to illustrate the design, and the two OpenAPI files in [`api/`](api) keep the Apache 2.0 licence line that SwaggerHub put in them.
+
+The logo was made with [LogoMakr](https://logomakr.com); the version here has a transparent background and was smoothed and enlarged from the original small image.
